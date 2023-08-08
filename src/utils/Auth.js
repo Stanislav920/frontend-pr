@@ -11,7 +11,8 @@ export function register(email, password) {
   return fetch(`${base__Url}/signup`, {
     method: "POST",
     headers: {
-        "Content-Type": "application/json",
+      Accept: "application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({ password, email }),
   }).then(getResponseData);
@@ -21,7 +22,7 @@ export function authorize(email, password) {
   return fetch(`${base__Url}/signin`, {
     method: "POST",
     headers: {
-      
+      Accept: "application/json",
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
