@@ -7,8 +7,8 @@ export const getResponseData = (res) => {
   return res.json();
 };
 
-export function authorize(email, password) {
-  return fetch(`${base__Url}/signin`, {
+export function register(email, password) {
+  return fetch(`${base__Url}/signup`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -18,14 +18,14 @@ export function authorize(email, password) {
   }).then(getResponseData);
 }
 
-export function register(email, password) {
-  return fetch(`${base__Url}/signup`, {
+export function authorize(email, password) {
+  return fetch(`${base__Url}/signin`, {
     method: "POST",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ password, email }),
+    body: JSON.stringify({ email, password }),
   }).then(getResponseData);
 }
 
