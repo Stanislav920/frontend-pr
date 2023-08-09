@@ -7,17 +7,6 @@ export const getResponseData = (res) => {
   return res.json();
 };
 
-export function register(email, password) {
-  return fetch(`${base__Url}/signup`, {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ password, email }),
-  }).then(getResponseData);
-}
-
 export function authorize(email, password) {
   return fetch(`${base__Url}/signin`, {
     method: "POST",
@@ -26,6 +15,17 @@ export function authorize(email, password) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
+  }).then(getResponseData);
+}
+
+export function register(email, password) {
+  return fetch(`${base__Url}/signup`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ password, email }),
   }).then(getResponseData);
 }
 
