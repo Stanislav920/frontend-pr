@@ -9,7 +9,7 @@ export const getResponseData = (res) => {
 
 export function register(email, password) {
   return fetch(`${base__Url}/signup`, {
-    method: "POST",
+    method: "GET",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
