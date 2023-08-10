@@ -11,7 +11,7 @@ export function register(email, password) {
   return fetch(`${base__Url}/signup`, {
     method: "POST",
     headers: {
-      Accept: "application/json",
+       Accept: "application/json",
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),

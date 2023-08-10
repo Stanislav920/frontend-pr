@@ -11,7 +11,7 @@ import Register from './Register';
 import InfoToolTip from './InfoTooltip';
 
 import api from '../utils/Api.js';
-import * as auth from '../utils/Auth.js';
+import auth from '../utils/Auth.js';
 
 import EditProfilePopup from './EditProfilePopup.js';
 import AddPlacePopup from './AddPlacePopup.js';
