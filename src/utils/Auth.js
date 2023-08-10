@@ -1,4 +1,4 @@
-export const baseUrl = "https://api.stas.nomoreparties.co";
+export const baseUrl = ("https://api.stas.nomoreparties.co");
 
 export const getResponseData = (res) => {
   if (!res.ok) {
