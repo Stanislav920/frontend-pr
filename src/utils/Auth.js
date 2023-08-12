@@ -15,7 +15,8 @@ export function register(email, password) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
-  }).then(getResponseData);
+  })
+  .then(getResponseData);
 }
 
 export function authorize(email, password) {
@@ -26,8 +27,11 @@ export function authorize(email, password) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
-  }).then(getResponseData);
-}
+  }).then(getResponseData)
+  .then((userData) => {
+    if (userData.token) { localStorage.setItem('token', userData.token) }
+  });
+};
 
 export function checkToken(token) {
   return fetch(`${base__Url}/users/me`, {
