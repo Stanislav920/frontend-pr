@@ -27,10 +27,7 @@ export function authorize(email, password) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
-  }).then(getResponseData)
-  .then((userData) => {
-    if (userData.token) { localStorage.setItem('token', userData.token) }
-  });
+  }).then(getResponseData);
 };
 
 export function checkToken(token) {
