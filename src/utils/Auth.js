@@ -7,16 +7,15 @@ export const getResponseData = (res) => {
   return res.json();
 };
 
-export async function register(email, password) {
-  const res = await fetch(`${base__Url}/signup`, {
+export function register(email, password) {
+  return fetch(`${base__Url}/signup`, {
     method: "POST",
     headers: {
-      Accept: "application/json",
+       Accept: "application/json",
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
-  });
-  return getResponseData(res);
+  }).then(getResponseData);
 }
 
 export function authorize(email, password) {
