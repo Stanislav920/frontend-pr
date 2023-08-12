@@ -1,4 +1,4 @@
-export const baseUrl = ("https://api.stas.nomoreparties.co");
+export const base__Url = "https://api.stas.nomoreparties.co";
 
 export const getResponseData = (res) => {
   if (!res.ok) {
@@ -7,19 +7,20 @@ export const getResponseData = (res) => {
   return res.json();
 };
 
-export function register(email, password) {
-  return fetch(`${baseUrl}/signup`, {
+export async function register(email, password) {
+  const res = await fetch(`${base__Url}/signup`, {
     method: "POST",
     headers: {
-       Accept: "application/json",
+      Accept: "application/json",
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
-  }).then(getResponseData);
+  });
+  return getResponseData(res);
 }
 
 export function authorize(email, password) {
-  return fetch(`${baseUrl}/signin`, {
+  return fetch(`${base__Url}/signin`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -30,7 +31,7 @@ export function authorize(email, password) {
 }
 
 export function checkToken(token) {
-  return fetch(`${baseUrl}/users/me`, {
+  return fetch(`${base__Url}/users/me`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
